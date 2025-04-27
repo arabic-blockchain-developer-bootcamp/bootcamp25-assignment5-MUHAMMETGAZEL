@@ -4,13 +4,45 @@ pragma solidity ^0.8.0;
 contract Assignment5 {
     // 1. Declare a public unsigned integer variable called `counter`
 
+        uint public counter;
+        function incrementCounter() public {
+        counter++;
+        }
+        function setCounter(uint _value) public {
+        counter = _value;
+      }
+    
+
     // 2. Declare a public boolean variable called `isActive`
+    
+        bool public isActive;
+        function setIsActive(bool _status) public {
+        isActive = _status;
+      }
+    
 
     // 3. Create a public mapping from an address to a string called `userNames`
 
+    mapping(address => string) public userNames;
+    function setUserName(address _userAddress, string memory _name) public {
+        userNames[_userAddress] = _name;
+    }
     // 4. Define a struct `User` with fields: `id` (uint), `name` (string)
+  
+        struct User {
+          uint id;
+          string name;
+       }
+   
+   
 
     // 5. Create a public array of `User` called `users`
+   
+      User[] public users;
+     function addUser(uint _id, string memory _name) public {
+        users.push(User(_id, _name));
+    }
+}
 
     // Constructor
     // Initialize `isActive` to true
