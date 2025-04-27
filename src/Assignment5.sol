@@ -24,7 +24,9 @@ contract Assignment5 {
     // 3. Create a public mapping from an address to a string called `userNames`
 
     mapping(address => string) public userNames;
-   
+    function setUserName(address _userAddress, string memory _name) public {
+        userNames[_userAddress] = _name;
+    }
     // 4. Define a struct `User` with fields: `id` (uint), `name` (string)
   
         struct User {
@@ -37,7 +39,10 @@ contract Assignment5 {
     // 5. Create a public array of `User` called `users`
    
       User[] public users;
-    
+     function addUser(uint _id, string memory _name) public {
+        users.push(User(_id, _name));
+    }
+}
 
     // Constructor
     // Initialize `isActive` to true
